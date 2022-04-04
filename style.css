@@ -81,12 +81,18 @@ footer {
   height: 300px;
 }
 
-footer img {
+footer svg {
   width: 70px;
   height: 70px;
   border: 2px solid white;
   border-radius: 50%;
   padding: 15px;
+  fill: white;
   margin: 10px;
   cursor: pointer;
+}
+
+footer svg:active {
+  fill: hsl(300, 69%, 71%);
+  border-color: hsl(300, 69%, 71%);
 }
