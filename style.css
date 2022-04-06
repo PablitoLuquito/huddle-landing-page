@@ -3,69 +3,76 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 16px;
 }
 
 body {
-  background-image: url(img/bg-mobile.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
   background-color: hsl(257, 40%, 49%);
-  font-size: 34px;
+  background-image: url(img/bg-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 1440px;
+  min-width: 375px;
 }
 
 header {
-  padding-left: 50px;
-  padding-top: 50px;
-  height: 200px;
+  margin: 30px 40px 50px 40px;
 }
 
 header img {
-  width: 300px;
+  width: 150px;
 }
 
 main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px 50px 0px 50px;
-  height: 1100px;
+  flex-direction: row;
+  margin: 0 40px 0 40px;
 }
 
 figure {
-  margin-bottom: 30px;
+  width: 50%;
 }
 
 figure img {
-  max-width: 100%;
   height: auto;
+  width: 90%;
 }
 
 section {
-  color: white;
-  text-align: center;
+  width: 50%;
+  height: auto;
+  padding: 30px 0 30px 0;
+  font-weight: 400;
 }
 
 section h1 {
   font-weight: 600;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  font-size: 30px;
 }
 
 section p {
-  font-weight: 400;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 section button {
-  background-color: white;
-  color: hsl(257, 40%, 49%);
+  width: 30%;
+  height: 30px;
   border: none;
-  border-radius: 50px;
-  box-shadow: 0px 3px 7px #333;
+  border-radius: 25px;
+  color: hsl(257, 40%, 49%);
+  box-shadow: 0 2px 5px rgb(59, 59, 59);
   font-weight: 400;
-  font-size: 30px;
-  width: 450px;
-  height: 90px;
+  font-size: 13px;
   cursor: pointer;
+}
+
+section button:hover {
+  background-color: hsl(300, 69%, 90%);
 }
 
 section button:active {
@@ -75,24 +82,113 @@ section button:active {
 
 footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  margin: 0 40px 0px 40px;
+}
+
+footer a {
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
+  border: 1px solid white;
+  border-radius: 25px;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px 0 5px;
 }
 
-footer svg {
-  width: 70px;
-  height: 70px;
-  border: 2px solid white;
-  border-radius: 50%;
-  padding: 15px;
+footer a svg {
+  width: 50%;
+  height: 50%;
   fill: white;
-  margin: 10px;
-  cursor: pointer;
 }
 
-footer svg:active {
-  fill: hsl(300, 69%, 71%);
+.active:active {
   border-color: hsl(300, 69%, 71%);
+  fill: hsl(300, 69%, 71%);
+}
+
+.one {
+  order: 3;
+}
+
+.two {
+  order: 2;
+}
+
+three {
+  order: 1;
+}
+
+@media only screen and (min-width: 1300px) {
+  * {
+    font-size: 25px;
+  }
+
+  section h1 {
+    font-size: 35px;
+  }
+
+  section button {
+    font-size: 18px;
+  }
+
+  footer a {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 757px) {
+  body {
+    background-image: url(img/bg-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  header img {
+    width: 125px;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  figure,
+  section {
+    width: 100%;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section p,
+  h1 {
+    text-align: center;
+  }
+
+  section h1 {
+    font-size: 25px;
+  }
+
+  section button {
+    width: 70%;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  footer {
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
 }
